@@ -2,7 +2,7 @@ package com.dabe.skyapp.di.modules;
 
 
 import com.dabe.skyapp.model.DataManager;
-import com.dabe.skyapp.model.IDataManager;
+import com.dabe.skyapp.model.interfaces.IDataManager;
 
 import javax.inject.Singleton;
 

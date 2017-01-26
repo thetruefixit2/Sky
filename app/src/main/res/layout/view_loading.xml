@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
-              android:orientation="horizontal"
-              android:layout_height="50dp">
+              android:layout_height="50dp"
+              android:orientation="horizontal">
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -11,14 +11,20 @@
         android:layout_height="match_parent"
         android:layout_weight="3"/>
 
-    <TextView
-        android:id="@+id/loadingText"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="top|center_horizontal"
-        android:text="@string/loading_in_progress"
-        android:textColor="@color/black"
-        />
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="top|center_horizontal"
+            android:text="@string/loading_in_progress_code"
+            android:textColor="@color/black"
+            />
+    </RelativeLayout>
 
 </LinearLayout>

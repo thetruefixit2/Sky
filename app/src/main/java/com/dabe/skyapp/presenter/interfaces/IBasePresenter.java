@@ -1,4 +1,4 @@
-package com.dabe.skyapp.presenter;
+package com.dabe.skyapp.presenter.interfaces;
 
 /**
  * Created by Daniil Belevtsev on 25.01.2017 22:36.

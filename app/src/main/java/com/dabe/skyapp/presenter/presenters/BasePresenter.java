@@ -1,6 +1,7 @@
-package com.dabe.skyapp.presenter;
+package com.dabe.skyapp.presenter.presenters;
 
-import com.dabe.skyapp.model.IDataManager;
+import com.dabe.skyapp.model.interfaces.IDataManager;
+import com.dabe.skyapp.presenter.interfaces.IBasePresenter;
 import com.dabe.skyapp.view.interfaces.IBaseView;
 
 import javax.inject.Inject;

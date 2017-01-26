@@ -5,6 +5,7 @@ import android.content.Context;
 import com.dabe.skyapp.TheApp;
 import com.dabe.skyapp.app.AppConsts;
 import com.dabe.skyapp.model.api.interfaces.ISkyApi;
+import com.dabe.skyapp.model.interfaces.IDataManager;
 
 import javax.inject.Inject;
 import javax.inject.Named;
