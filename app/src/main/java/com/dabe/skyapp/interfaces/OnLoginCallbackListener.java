@@ -12,4 +12,5 @@ public interface OnLoginCallbackListener extends OnProgressListener {
     void onOpenHardLoginScreen();
     void onCodeRequested(CodeTypeEnum codeType);
     void onSuccessLogin();
+
 }

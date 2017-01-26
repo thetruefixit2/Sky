@@ -14,4 +14,14 @@ public class LoginEasyPresenter extends BasePresenter<ILoginView> {
         TheApp.getComponent().inject(this);
         setView(view);
     }
+
+    public void validateTexts(String login) {
+        boolean validateResult = false;
+        if (!login.isEmpty()) {
+            validateResult = true;
+        }
+        if (getView() != null) {
+            getView().onLoginButtonEnabled(validateResult);
+        }
+    }
 }

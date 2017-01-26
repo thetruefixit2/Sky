@@ -6,4 +6,5 @@ package com.dabe.skyapp.view.interfaces;
  */
 
 public interface ILoginView extends IBaseView {
+    void onLoginButtonEnabled(boolean enabled);
 }

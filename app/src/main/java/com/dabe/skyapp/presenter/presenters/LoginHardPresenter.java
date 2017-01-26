@@ -14,4 +14,19 @@ public class LoginHardPresenter extends BasePresenter<ILoginView> {
         TheApp.getComponent().inject(this);
         setView(view);
     }
+
+    public void validateTexts(String login, String password) {
+        boolean validateResult = false;
+        if (!login.isEmpty() && !password.isEmpty()) {
+            validateResult = true;
+        }
+        if (getView() != null) {
+            getView().onLoginButtonEnabled(validateResult);
+        }
+    }
+
+
+    public void login(String login, String password) {
+
+    }
 }
