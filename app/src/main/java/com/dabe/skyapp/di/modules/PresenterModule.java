@@ -4,7 +4,7 @@ package com.dabe.skyapp.di.modules;
 import com.dabe.skyapp.model.DataManager;
 import com.dabe.skyapp.model.SharedPreffsManager;
 import com.dabe.skyapp.model.interfaces.IDataManager;
-import com.dabe.skyapp.utils.Timer;
+import com.dabe.skyapp.utils.clazz.Timer;
 
 import javax.inject.Singleton;
 

@@ -10,7 +10,7 @@ import com.dabe.skyapp.model.data.bo.RecipientBO;
 import com.dabe.skyapp.model.data.dto.response.AppTokenDTO;
 import com.dabe.skyapp.model.data.enums.CodeTypeEnum;
 import com.dabe.skyapp.utils.LogUtils;
-import com.dabe.skyapp.utils.Timer;
+import com.dabe.skyapp.utils.clazz.Timer;
 import com.dabe.skyapp.view.interfaces.ICodeView;
 
 import javax.inject.Inject;
@@ -37,6 +37,14 @@ public class CodePresenter extends BasePresenter<ICodeView> {
     public void init(ICodeView view) {
         TheApp.getComponent().inject(this);
         setView(view);
+        initTitle();
+    }
+
+    private void initTitle() {
+        String title = getAppContext().getString(R.string.code_in);
+        if (getView() != null) {
+            getView().onToolbarTitleChanged(title);
+        }
     }
 
     public void initDefaultData(Bundle bundle) {

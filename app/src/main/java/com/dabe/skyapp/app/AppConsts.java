@@ -8,7 +8,4 @@ package com.dabe.skyapp.app;
 public class AppConsts {
     public static final String UI_THREAD = "ui_thread";
     public static final String IO_THREAD = "io_thread";
-    public static final String GSON_SERIALIZER = "gson_serialized";
-    public static final String GSON_DESERIALIZER = "gson_deserialized";
-    public static final long ONE_SECOND = 1000;
 }

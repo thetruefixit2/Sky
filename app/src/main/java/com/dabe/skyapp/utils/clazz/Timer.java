@@ -1,8 +1,8 @@
-package com.dabe.skyapp.utils;
+package com.dabe.skyapp.utils.clazz;
 
 import android.os.Handler;
 
-import com.dabe.skyapp.app.AppConsts;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by Daniil Belevtsev on 27.01.2017 21:45.
@@ -30,14 +30,14 @@ public class Timer {
                 dec();
                 if (getSecondsRemains() > 0) {
                     listener.onTimerTicks(getSecondsRemains());
-                    timerHandler.postDelayed(this, AppConsts.ONE_SECOND);
+                    timerHandler.postDelayed(this, TimeUnit.SECONDS.toMillis(1));
                 } else {
                     listener.onStop();
                 }
 
             }
         };
-        timerHandler.postDelayed(runnable, AppConsts.ONE_SECOND);
+        timerHandler.postDelayed(runnable, TimeUnit.SECONDS.toMillis(1));
     }
 
     public void stopTimer() {

@@ -15,4 +15,6 @@ public interface ICodeView extends IBaseView {
     void onResendButtonEnableUpdate(boolean enabled);
 
     void onSuccessLogin();
+
+    void onToolbarTitleChanged(String title);
 }

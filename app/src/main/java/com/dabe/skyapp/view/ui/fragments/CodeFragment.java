@@ -117,5 +117,12 @@ public class CodeFragment extends BaseLoginFragment implements ICodeView {
         }
     }
 
+    @Override
+    public void onToolbarTitleChanged(String title) {
+        if (getActivityCallback() != null) {
+            getActivityCallback().onToolbarTitleChanged(title);
+        }
+    }
+
 
 }

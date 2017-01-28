@@ -51,8 +51,8 @@ public class ProductsActivity extends PopUpActivity
 
     private void initDefaultData() {
         showProductsScreen();
+        presenter.startDailyUpdate();
     }
-
 
     @Override
     public void onErrorOccurred(String errorMessage) {
