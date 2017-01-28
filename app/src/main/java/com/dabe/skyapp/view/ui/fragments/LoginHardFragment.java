@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.dabe.skyapp.R;
 import com.dabe.skyapp.TheApp;
+import com.dabe.skyapp.model.data.bo.RecipientBO;
 import com.dabe.skyapp.presenter.presenters.LoginHardPresenter;
 import com.dabe.skyapp.view.interfaces.ILoginView;
 
@@ -64,7 +65,7 @@ public class LoginHardFragment extends BaseLoginFragment implements ILoginView {
 
     @OnClick(R.id.login_sign_button)
     void onLoginClicked() {
-
+        presenter.login(etEmail.getText().toString(), etPassword.getText().toString());
     }
 
     @OnClick(R.id.login_password_mode_button)
@@ -77,11 +78,31 @@ public class LoginHardFragment extends BaseLoginFragment implements ILoginView {
     @OnTextChanged(value = {R.id.login_email, R.id.login_password},
             callback = OnTextChanged.Callback.AFTER_TEXT_CHANGED)
     void onLoginTextChanged() {
-        presenter.validateTexts(etEmail.getText().toString(), etPassword.getText().toString());
+        presenter.validateData(etEmail.getText().toString(), etPassword.getText().toString());
     }
 
     @Override
-    public void onLoginButtonEnabled(boolean enabled) {
+    public void onSignButtonEnabled(boolean enabled) {
         btnLogin.setEnabled(enabled);
     }
+
+    @Override
+    public void onSuccessRequestCode(RecipientBO recipient) {
+        //для этого типа нет.
+    }
+
+    @Override
+    public void onSuccessSignIn() {
+        if (getActivityCallback() != null) {
+            getActivityCallback().onSuccessLogin();
+        }
+    }
+
+    @Override
+    public void onToolbarTitleChanged(String title) {
+        if (getActivityCallback() != null) {
+            getActivityCallback().onToolbarTitleChanged(title);
+        }
+    }
+
 }

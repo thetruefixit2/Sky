@@ -45,8 +45,14 @@ public class FragmentActivity extends AppCompatActivity {
         transaction.commitAllowingStateLoss();
     }
 
-    protected <T extends Fragment> Fragment findAddedFragment(Class<T> clazz) {
-        return null;
+    @SuppressWarnings("unchecked")
+    protected <T extends Fragment> T findAddedFragment(Class<T> clazz) {
+        Fragment fragment = getSupportFragmentManager().findFragmentByTag(clazz.getSimpleName());
+        if (fragment != null && fragment.isAdded()) {
+            return (((T) fragment));
+        } else {
+            return null;
+        }
     }
 
     /**

@@ -15,11 +15,21 @@
     <string name="code_resend">Выслать код повторно</string>
     <string name="code_sent_email">Введите код (отправлен на почту %s)</string>
     <string name="code_sent_phone">Введите код (отправлен на телефон %s)</string>
+    <string name="code_sent_unknown">Введите код (отправлен на неизвестный источник)</string>
+    <string name="code_seconds_remain">\u0020(%dc)\u0020</string>
+
+
+    <string name="error_email">Неверный адрес электронной почты</string>
+    <string name="error_email_password">Неверный адрес электронной почты или пароль</string>
+    <string name="error_internet">Не удалось подключиться. Проверьте интернет-соединение</string>
+    <string name="error_code">Неверный код</string>
+    <string name="error_token">Токен устарел</string>
 
 
     <string name="please_wait">Подождите..</string>
-    <string name="loading_in_progress_code">Выполняется вход.</string>
-    <string name="loading_in_progress_login">Отправка кода.</string>
+    <string name="loading_in_progress_code">Отправка кода.</string>
+    <string name="loading_in_progress_login">Выполняется вход.</string>
     <string name="email">Электронная почта</string>
     <string name="password">Пароль</string>
+    <string name="logout">logout</string>
 </resources>

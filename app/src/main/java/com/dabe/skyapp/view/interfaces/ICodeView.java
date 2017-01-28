@@ -6,4 +6,13 @@ package com.dabe.skyapp.view.interfaces;
  */
 
 public interface ICodeView extends IBaseView {
+    void onSignButtonEnabled(boolean enabled);
+
+    void onDescriptionTextUpdated(String text);
+
+    void onResendButtonTextUpdate(String text);
+
+    void onResendButtonEnableUpdate(boolean enabled);
+
+    void onSuccessLogin();
 }

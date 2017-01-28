@@ -6,4 +6,5 @@ package com.dabe.skyapp.interfaces;
  */
 
 public interface OnProductsCallbackListener extends OnProgressListener {
+    void onLogoutRequest();
 }

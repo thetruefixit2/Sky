@@ -10,7 +10,12 @@ import rx.Observable;
  */
 
 public interface ISkyApi {
-    //@POST
+    /**
+     * Запрос на быстрый логин
+     *
+     * @param email - мыло юзера
+     * @return возвращает AuthTokenDTO
+     */
     Observable<Response> easyLogin(String email);
     Observable<Response> hardLogin(String email, String password);
     Observable<Response> verifyCode(String code, String authToken);

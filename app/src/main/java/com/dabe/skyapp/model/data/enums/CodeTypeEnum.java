@@ -11,6 +11,6 @@ public enum CodeTypeEnum {
     @SerializedName("1")
     EMAIL,
     @SerializedName("0")
-    SMS;
+    PHONE;
 
 }

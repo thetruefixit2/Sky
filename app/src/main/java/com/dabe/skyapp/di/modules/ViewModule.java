@@ -3,6 +3,7 @@ package com.dabe.skyapp.di.modules;
 import com.dabe.skyapp.presenter.presenters.CodePresenter;
 import com.dabe.skyapp.presenter.presenters.LoginEasyPresenter;
 import com.dabe.skyapp.presenter.presenters.LoginHardPresenter;
+import com.dabe.skyapp.presenter.presenters.ProductsMainPresenter;
 import com.dabe.skyapp.presenter.presenters.ProductsPresenter;
 
 import dagger.Module;
@@ -33,5 +34,10 @@ public class ViewModule {
     @Provides
     ProductsPresenter provideProductsPresenter() {
         return new ProductsPresenter();
+    }
+
+    @Provides
+    ProductsMainPresenter provideProductsMainPresenter() {
+        return new ProductsMainPresenter();
     }
 }

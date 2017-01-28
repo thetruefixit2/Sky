@@ -16,7 +16,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".view.ui.activities.MainActivity"/>
+        <activity android:name=".view.ui.activities.ProductsActivity"/>
 
     </application>
 

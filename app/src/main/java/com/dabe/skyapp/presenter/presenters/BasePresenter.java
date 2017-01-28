@@ -1,5 +1,10 @@
 package com.dabe.skyapp.presenter.presenters;
 
+import android.content.Context;
+
+import com.dabe.skyapp.R;
+import com.dabe.skyapp.model.SharedPreffsManager;
+import com.dabe.skyapp.model.data.enums.ErrorTypesEnum;
 import com.dabe.skyapp.model.interfaces.IDataManager;
 import com.dabe.skyapp.presenter.interfaces.IBasePresenter;
 import com.dabe.skyapp.view.interfaces.IBaseView;
@@ -20,7 +25,13 @@ public abstract class BasePresenter<T extends IBaseView> implements IBasePresent
     protected T view;
 
     @Inject
+    protected Context appContext;
+
+    @Inject
     protected IDataManager dataManager;
+
+    @Inject
+    protected SharedPreffsManager sharedManager;
 
     @Inject
     protected CompositeSubscription compositeSubscription; // this is for clear rxJava subscribers.
@@ -32,18 +43,60 @@ public abstract class BasePresenter<T extends IBaseView> implements IBasePresent
         compositeSubscription.add(sub);
     }
 
-    @Override
-    public void onStop() {
-        if (compositeSubscription != null) {
-            compositeSubscription.clear();
+    protected void processError(ErrorTypesEnum errorType) {
+        String errorString = getErrorByType(errorType);
+        if (getView() != null) {
+            getView().onErrorOccurred(errorString);
         }
+    }
+
+    protected void hideLoading() {
+        if (getView() != null) {
+            getView().onHideLoading();
+        }
+    }
+
+    protected String getErrorByType(ErrorTypesEnum type) {
+        String errorMessage;
+
+        switch (type) {
+            case EMAIL:
+                errorMessage = appContext.getString(R.string.error_email);
+                break;
+            case EMAIL_PASSWORD:
+                errorMessage = appContext.getString(R.string.error_email_password);
+                break;
+            case CODE:
+                errorMessage = appContext.getString(R.string.error_code);
+                break;
+            case TOKEN:
+                errorMessage = appContext.getString(R.string.error_token);
+                break;
+            case INTERNET:
+                errorMessage = appContext.getString(R.string.error_internet);
+            default:
+                errorMessage = appContext.getString(R.string.error_internet);
+                break;
+        }
+        return errorMessage;
+    }
+
+    protected void setView(T view) {
+        this.view = view;
     }
 
     protected T getView() {
         return view;
     }
 
-    protected void setView(T view) {
-        this.view = view;
+    protected Context getAppContext() {
+        return appContext;
+    }
+
+    @Override
+    public void onStop() {
+        if (compositeSubscription != null) {
+            compositeSubscription.clear();
+        }
     }
 }

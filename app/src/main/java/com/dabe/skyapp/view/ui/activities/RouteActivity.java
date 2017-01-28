@@ -3,7 +3,7 @@ package com.dabe.skyapp.view.ui.activities;
 
 import android.content.Intent;
 
-import com.dabe.skyapp.model.data.enums.CodeTypeEnum;
+import com.dabe.skyapp.model.data.bo.RecipientBO;
 import com.dabe.skyapp.view.ui.fragments.CodeFragment;
 import com.dabe.skyapp.view.ui.fragments.LoginEasyFragment;
 import com.dabe.skyapp.view.ui.fragments.LoginHardFragment;
@@ -25,8 +25,8 @@ public class RouteActivity extends FragmentActivity {
         replaceFragment(LoginHardFragment.newInstance(), false);
     }
 
-    protected void showCodeScreen(CodeTypeEnum codeType) {
-        replaceFragment(CodeFragment.newInstance(codeType), true);
+    protected void showCodeScreen(RecipientBO reception) {
+        replaceFragment(CodeFragment.newInstance(reception), true);
     }
 
     protected void showProductsScreen() {
@@ -34,8 +34,15 @@ public class RouteActivity extends FragmentActivity {
     }
 
     protected void showMainContainer() {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, ProductsActivity.class);
         startActivity(intent);
+        finish();
+    }
+
+    protected void showLoginContainer() {
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 }

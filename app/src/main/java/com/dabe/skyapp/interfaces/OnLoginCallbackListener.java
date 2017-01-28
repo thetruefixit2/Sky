@@ -1,6 +1,6 @@
 package com.dabe.skyapp.interfaces;
 
-import com.dabe.skyapp.model.data.enums.CodeTypeEnum;
+import com.dabe.skyapp.model.data.bo.RecipientBO;
 
 /**
  * Created by Daniil Belevtsev on 26.01.2017 0:55.
@@ -10,7 +10,9 @@ import com.dabe.skyapp.model.data.enums.CodeTypeEnum;
 public interface OnLoginCallbackListener extends OnProgressListener {
     void onOpenEasyLoginScreen();
     void onOpenHardLoginScreen();
-    void onCodeRequested(CodeTypeEnum codeType);
+
+    void onCodeRequested(RecipientBO recipient);
     void onSuccessLogin();
 
+    void onToolbarTitleChanged(String title);
 }

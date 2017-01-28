@@ -19,6 +19,12 @@ public class Response {
     @SerializedName("status_code")
     private int statusCode;
 
+    private Response(Builder builder) {
+        result = builder.result;
+        errorMessage = builder.errorMessage;
+        statusCode = builder.statusCode;
+    }
+
     public ResponseDataDTO getResult() {
         return result;
     }
@@ -29,5 +35,34 @@ public class Response {
 
     public int getStatusCode() {
         return statusCode;
+    }
+
+
+    public static final class Builder {
+        private ResponseDataDTO result;
+        private String errorMessage;
+        private int statusCode;
+
+        public Builder() {
+        }
+
+        public Builder result(ResponseDataDTO val) {
+            result = val;
+            return this;
+        }
+
+        public Builder errorMessage(String val) {
+            errorMessage = val;
+            return this;
+        }
+
+        public Builder statusCode(int val) {
+            statusCode = val;
+            return this;
+        }
+
+        public Response build() {
+            return new Response(this);
+        }
     }
 }

@@ -8,4 +8,7 @@ package com.dabe.skyapp.app;
 public class AppExtras {
     public static final String CODE_TYPE = "extra_code_type";
     public static final String OPERATION = "extra_operation";
+    public static final String RECIPIENT = "extra_recipient";
+    public static final String SHARED_AUTH_TOKEN = "extra_auth_token";
+    public static final String SHARED_APP_TOKEN = "extra_app_token";
 }

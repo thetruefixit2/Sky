@@ -7,9 +7,9 @@ package com.dabe.skyapp.view.interfaces;
  */
 
 public interface IBaseView {
-    void showError(String errorMessage);
+    void onErrorOccurred(String errorMessage);
 
-    void showLoading(String loadingMessage);
+    void onShowLoading(String loadingMessage);
 
-    void hideLoading();
+    void onHideLoading();
 }

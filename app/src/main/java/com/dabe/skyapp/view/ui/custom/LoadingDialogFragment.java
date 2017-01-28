@@ -31,10 +31,10 @@ public class LoadingDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        View view = getLayoutInflater(savedInstanceState).inflate(R.layout.view_loading, null, false);
-        AlertDialog.Builder adb = new AlertDialog.Builder(getActivity())
-                .setView(R.layout.view_loading);
-        return adb.create();
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setView(R.layout.view_loading);
+        builder.setCancelable(false);
+        return builder.create();
     }
 
     @Nullable

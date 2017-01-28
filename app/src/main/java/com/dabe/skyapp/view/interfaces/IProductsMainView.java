@@ -5,6 +5,6 @@ package com.dabe.skyapp.view.interfaces;
  * Project: SkyApp; Skype: pandamoni1
  */
 
-public interface IProductsView extends IBaseView {
-    void onLogOutClicked();
+public interface IProductsMainView extends IBaseView {
+    void onSuccessLogOut();
 }

@@ -2,7 +2,9 @@ package com.dabe.skyapp.di.modules;
 
 
 import com.dabe.skyapp.model.DataManager;
+import com.dabe.skyapp.model.SharedPreffsManager;
 import com.dabe.skyapp.model.interfaces.IDataManager;
+import com.dabe.skyapp.utils.Timer;
 
 import javax.inject.Singleton;
 
@@ -27,5 +29,17 @@ public class PresenterModule {
     @Provides
     CompositeSubscription provideCompositeSubscription() {
         return new CompositeSubscription();
+    }
+
+    @Provides
+    @Singleton
+    Timer provideTimer() {
+        return new Timer();
+    }
+
+    @Provides
+    @Singleton
+    SharedPreffsManager provideSharedManager() {
+        return new SharedPreffsManager();
     }
 }
